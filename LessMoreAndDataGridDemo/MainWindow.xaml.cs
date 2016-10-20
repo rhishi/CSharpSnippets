@@ -39,6 +39,7 @@ namespace LessMoreAndDataGridDemo
     /// <summary>
     /// Converts between "mailto:" URI and string that is just the email address.
     /// </summary>
+    [ValueConversion(typeof(Uri), typeof(string))]
     public class EmailConverter : IValueConverter
     {
         /// <summary>
