@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpSnippets", "CSharpSni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessMoreAndDataGridDemo", "LessMoreAndDataGridDemo\LessMoreAndDataGridDemo.csproj", "{D86D1C34-5C2A-4912-AB4C-6C0A691733F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridDemo", "DataGridDemo\DataGridDemo.csproj", "{B26095D9-7C48-4C6A-BEB4-ECCF7E69463A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D86D1C34-5C2A-4912-AB4C-6C0A691733F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D86D1C34-5C2A-4912-AB4C-6C0A691733F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D86D1C34-5C2A-4912-AB4C-6C0A691733F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B26095D9-7C48-4C6A-BEB4-ECCF7E69463A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B26095D9-7C48-4C6A-BEB4-ECCF7E69463A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B26095D9-7C48-4C6A-BEB4-ECCF7E69463A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B26095D9-7C48-4C6A-BEB4-ECCF7E69463A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
