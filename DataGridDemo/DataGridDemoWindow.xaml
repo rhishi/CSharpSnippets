@@ -30,7 +30,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="3" Margin="0,10,0,0" Orientation="Vertical">
-            <FrameworkElement x:Name="DummyElement" Visibility="Collapsed"/>
+            <FrameworkElement x:Name="DummyElement" Visibility="Collapsed" />
             <DataGrid ItemsSource="{Binding Path=EarlyComputers3}" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridCheckBoxColumn Header="Include" Binding="{Binding Include}" IsReadOnly="False"
@@ -38,7 +38,32 @@
                     <DataGridTextColumn Header="Model" Binding="{Binding Model}" IsReadOnly="True" />
                     <DataGridTextColumn Header="Maker" Binding="{Binding Maker}" IsReadOnly="True" />
                     <DataGridTextColumn Header="Country" Binding="{Binding Country}" IsReadOnly="True" />
+                    <DataGridTemplateColumn Header="Description">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Description}"
+                                               TextTrimming="CharacterEllipsis"
+                                               TextWrapping="NoWrap"
+                                               Width="150" />
+                                    <Button Content="{Binding LessMoreText}"
+                                            Click="LessMoreButton_OnClick"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="DetailsVisibility" Value="{Binding ShowMore, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    </Style>
+                </DataGrid.RowStyle>
+                <DataGrid.RowDetailsTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Description}"
+                                   TextWrapping="Wrap" />
+                    </DataTemplate>
+                </DataGrid.RowDetailsTemplate>
             </DataGrid>
             <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
                 <StackPanel.Resources>

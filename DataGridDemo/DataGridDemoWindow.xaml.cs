@@ -28,6 +28,12 @@ namespace DataGridDemo
         {
             ((DataGridDemoViewModel)DataContext).CancelButtonClicked();
         }
+
+        private void LessMoreButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var c = (Computer3)((FrameworkElement)sender).DataContext;
+            c.ToggleLessMore();
+        }
     }
 
     /// <summary>

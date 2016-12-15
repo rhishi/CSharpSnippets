@@ -152,8 +152,26 @@ namespace DataGridDemo
         public string Description { get; set; }
     }
 
-    public class Computer3 : Computer2
+    public class Computer3 : Computer2, INotifyPropertyChanged
     {
         public bool Include { get; set; }
+
+        public bool ShowMore { get; set; }
+
+        public string LessMoreText => ShowMore ? "less" : "more";
+
+        public void ToggleLessMore()
+        {
+            ShowMore = !ShowMore;
+            NotifyPropertyChanged(nameof(ShowMore));
+            NotifyPropertyChanged(nameof(LessMoreText));
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }
