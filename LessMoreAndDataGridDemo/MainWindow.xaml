@@ -39,6 +39,8 @@
                            Visibility="{Binding Path=ShowMore, Converter={StaticResource BooleanToVisibilityConverter}}" />
             </StackPanel>
         </Border>
+
+        <!-- ItemsSource or DataContext of the following DataGrids is set in the code-behind. -->
         <DataGrid Grid.Row="1" Margin="0,10,0,0" Name="Grid1" />
         <DataGrid Grid.Row="2" Margin="0,10,0,0" Name="Grid2" ItemsSource="{Binding}" />
         <DataGrid Grid.Row="3" Margin="0,10,0,0" Name="Grid3" ItemsSource="{Binding}" AutoGenerateColumns="False">

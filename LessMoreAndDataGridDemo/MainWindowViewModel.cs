@@ -39,8 +39,8 @@ namespace LessMoreAndDataGridDemo
         public void ToggleLessMore()
         {
             ShowMore = !ShowMore;
-            NotifyPropertyChanged("ShowMore");
-            NotifyPropertyChanged("LessMore");
+            NotifyPropertyChanged(nameof(ShowMore));
+            NotifyPropertyChanged(nameof(LessMore));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
