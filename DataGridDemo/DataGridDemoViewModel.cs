@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 
 namespace DataGridDemo
@@ -103,7 +104,7 @@ namespace DataGridDemo
                 c.Include = false;
             }
 
-            BuyResult = $"Bought {modelsBoughtCount}\r\n{modelsBoughtString}";
+            BuyResult = String.Format(CultureInfo.CurrentCulture, "Bought {0}\r\n{1}", modelsBoughtCount, modelsBoughtString);
             InSelectionMode = false;
         }
 
