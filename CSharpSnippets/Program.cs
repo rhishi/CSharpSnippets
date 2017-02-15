@@ -26,6 +26,10 @@ namespace CSharpSnippets
             // Let's test the odd behaviour of loop variable in lambda.
             TestForLoopVariableInLambda();
             TestForEachLoopVariableInLambda();
+
+            // Let's understand the basics of Nullable<T> type.
+            NullableBasics.TryCastingToBool();
+            NullableBasics.UnderstandNullable();
         }
 
         static void TestForLoopVariableInLambda()
