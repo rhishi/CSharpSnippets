@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
@@ -45,7 +46,7 @@ namespace LessMoreAndDataGridDemo
         /// <summary>
         /// Converts from "mailto:" URI to string email address.
         /// </summary>
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value != null)
             {
@@ -59,7 +60,7 @@ namespace LessMoreAndDataGridDemo
         /// <summary>
         /// Converts string email address to "mailto:" URI.
         /// </summary>
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var email = new Uri((string)value);
             return email;
