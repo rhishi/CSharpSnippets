@@ -30,6 +30,8 @@ namespace CSharpSnippets
             // Let's understand the basics of Nullable<T> type.
             NullableBasics.TryCastingToBool();
             NullableBasics.UnderstandNullable();
+
+            UnderstandEquality();
         }
 
         static void TestForLoopVariableInLambda()
@@ -66,6 +68,33 @@ namespace CSharpSnippets
                 Console.WriteLine(function());
             }
             Console.WriteLine();
+        }
+
+        static void UnderstandEquality()
+        {
+            object abc = "abc";
+            string abcStr = "a" + "b" + "c";
+            Console.WriteLine("abc == abcStr           = {0}", abc == abcStr);  // True.  CS0252 warning: possible unintended reference comparison
+            Console.WriteLine("abc as string == abcStr = {0}", abc as string == abcStr);  // True
+            Console.WriteLine("abc.Equals(abcStr)      = {0}", abc.Equals(abcStr));       // True
+
+            abc = null;
+            Console.WriteLine("abc == abcStr           = {0}", abc == abcStr);  // False. CS0252 warning: possible unintended reference comparison
+            Console.WriteLine("abc as string == abcStr = {0}", abc as string == abcStr);  // False
+            try
+            {
+                Console.WriteLine("abc.Equals(abcStr)      = {0}", abc.Equals(abcStr));
+            }
+            catch (NullReferenceException)
+            {
+                Console.WriteLine("abc.Equals(abcStr)      = {0}", "NullReferenceException");
+            }
+
+            object z123 = "0123";
+            string z123Str = Enumerable.Range(0, 4).Aggregate(string.Empty, (str, elt) => str + elt);
+            Console.WriteLine("z123 == z123Str           = {0}", z123 == z123Str);  // False. CS0252 warning: possible unintended reference comparison
+            Console.WriteLine("z123 as string == z123Str = {0}", z123 as string == z123Str);  // True
+            Console.WriteLine("z123.Equals(z123Str)      = {0}", z123.Equals(z123Str));       // True
         }
     }
 }
