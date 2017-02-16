@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataGridDemo"
         mc:Ignorable="d"
-        Title="DataGridDemo" Height="800" Width="500">
+        Title="DataGridDemo" Height="850" Width="500">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <local:InverseBooleanConverter x:Key="InverseBooleanConverter" />
@@ -15,6 +15,7 @@
     </Window.DataContext>
     <Grid Margin="10">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -29,7 +30,22 @@
                 <DataGridTextColumn Header="Country" Binding="{Binding Country}" />
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Grid.Row="3" Margin="0,10,0,0" Orientation="Vertical">
+        <DataGrid Grid.Row="3" Margin="0,10,0,0" ItemsSource="{Binding Path=EarlyComputers2}" AutoGenerateColumns="False"
+            CanUserReorderColumns="False"
+            CanUserSortColumns="False"
+            CanUserResizeColumns="False"
+            CanUserResizeRows="False"
+            HeadersVisibility="Column"
+            GridLinesVisibility="None"
+            HorizontalScrollBarVisibility="Disabled">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Model" Binding="{Binding Model}" />
+                <DataGridTextColumn Header="Maker" Binding="{Binding Maker}" />
+                <DataGridTextColumn Header="Country" Binding="{Binding Country}" />
+                <DataGridTextColumn Header="Year" Binding="{Binding Year}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="4" Margin="0,10,0,0" Orientation="Vertical">
             <FrameworkElement x:Name="DummyElement" Visibility="Collapsed" />
             <DataGrid ItemsSource="{Binding Path=EarlyComputers3}" AutoGenerateColumns="False">
                 <DataGrid.Columns>
